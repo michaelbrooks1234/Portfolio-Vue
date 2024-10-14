@@ -8,3 +8,14 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+$primary-color: rgb(57, 122, 120);
+
+.text-special {
+  color: $primary-color;
+}
+
+* {
+  font-family: "Afacad Flux", sans-serif;
+}

@@ -1,12 +1,11 @@
 <template>
-  <Home />
+  <Contact />
 </template>
-
 <script lang="ts">
-import home from '../components/Home.vue';
+import contact from '../components/Contact.vue';
 export default {
   components: {
-    Home: home,
+    Contact: contact,
   }
 }
 </script>
