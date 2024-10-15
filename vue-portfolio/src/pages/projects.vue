@@ -1,5 +1,11 @@
 <template>
-  <span>placeholder</span>
+  <Projects />
 </template>
-<script lang="ts" setup>
+<script lang="ts">
+import projects from '../components/Projects.vue';
+export default {
+  components: {
+    Projects: projects
+  }
+}
 </script>

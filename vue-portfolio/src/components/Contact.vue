@@ -1,47 +1,43 @@
 <template>
-  <v-container>
-    <v-form v-model="valid">
-      <v-container>
-        <v-row class="form-container">
-          <div class="secondary-form-container">
-            <v-list-item
-              title="Contact Me!"
-              subtitle="Send me a silly message or a serious inquiry and I will get back to you"
-              class="px-0 py-4"
-            ></v-list-item>
-            <v-text-field
-              class="text-field-email pb-2"
-              prepend-inner-icon="mdi-email-outline"
-              placeholder="Enter your email!"
-              :rules="emailRules"
-              v-model="email"
+  <v-form v-model="valid" class="form">
+      <v-row class="form-container">
+        <div class="secondary-form-container">
+          <v-list-item
+            title="Contact Me!"
+            subtitle="Send me a silly message or a serious inquiry and I will get back to you"
+            class="px-0 py-4"
+          ></v-list-item>
+          <v-text-field
+            class="text-field-email pb-2"
+            prepend-inner-icon="mdi-email-outline"
+            placeholder="Enter your email!"
+            :rules="emailRules"
+            v-model="email"
+          >
+          </v-text-field>
+          <v-textarea
+            no-resize
+            prepend-inner-icon="mdi-pencil"
+            placeholder="Enter the message you would like to send!"
+            class="text-field-message pb-2"
+            :rules="messageRules"
+            v-model="msg"
+          >
+          </v-textarea>
+          <v-btn
+            size="large"
+            width="120px"
+            @click="sendEmail()"
+          >
+            <span class="px-2">Send!</span>
+            <v-icon
+              class="mt-1"
             >
-            </v-text-field>
-            <v-textarea
-              no-resize
-              prepend-inner-icon="mdi-pencil"
-              placeholder="Enter the message you would like to send!"
-              class="text-field-message pb-2"
-              :rules="messageRules"
-              v-model="msg"
-            >
-            </v-textarea>
-            <v-btn
-              size="large"
-              width="120px"
-              @click="sendEmail()"
-            >
-              <span class="px-2">Send!</span>
-              <v-icon
-                class="mt-1"
-              >
-                mdi-email-fast-outline
-              </v-icon>
-            </v-btn>
-          </div>
-        </v-row>
-      </v-container>
-    </v-form>
+              mdi-email-fast-outline
+            </v-icon>
+          </v-btn>
+        </div>
+      </v-row>
     <v-snackbar
       v-model="alertOpen"
       :timeout="2500"
@@ -49,7 +45,7 @@
     >
       {{ alertMsg }}
     </v-snackbar>
-  </v-container>
+  </v-form>
 </template>
 <script lang="ts">
 export default {
@@ -118,26 +114,33 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100%;
 }
 
 .text-field-email {
-  width: 25vw;
+  width: 40vw;
 }
 
 .text-field-message {
-  width: 50vw;
+  width: 40vw;
 }
 
 .secondary-form-container {
   width: 50%;
-  height: 40%;
+  height: fit-content
 }
 
 @media only screen and (max-width: 700px) {
