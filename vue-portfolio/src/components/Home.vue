@@ -1,10 +1,21 @@
 <template>
   <div class="mainContainer">
-    <div class="titleContainer">
-      <h1 class="titleText">
-        Michael Brooks
-      </h1>  
-      <h3 class="subTitleText">Full Stack Engineer</h3>
+    <div style="display: flex; align-items: center;">
+      <v-avatar
+        size="180px" 
+        class="ma-5 avatar"
+      >
+        <v-img
+          alt="Michael"
+          src="https://media.licdn.com/dms/image/v2/D5603AQEMXJclBwBM2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698597923442?e=1734566400&v=beta&t=684ZjpbnkAurCofrtwXChuf_0c7f0gQ11nUn5ajCDJM"
+        ></v-img>
+      </v-avatar>
+      <div class="titleContainer">
+        <h1 class="titleText">
+          Michael Brooks
+        </h1>  
+        <h3 class="subTitleText">Full Stack Engineer</h3>
+      </div>
     </div>
     <div class="extrasContainer">
       <span
@@ -61,6 +72,7 @@
   font-size: 30px;
   width: 80%;
   display: flex;
+  margin-bottom: 10px;
   justify-content: space-between;
 }
 
@@ -75,8 +87,8 @@
 }
 
 .mainContainer {
-  margin-top: 20vh;
-  height: 65vh;
+  margin-top: 25vh;
+  height: 60vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -86,6 +98,7 @@
 
 .subTitleText {
   font-size: 50px;
+  text-align: start;
   color: grey;
   cursor: default;
 }
@@ -116,4 +129,12 @@
     font-size: 70px;
   }
 }
+
+@media only screen and (max-width: 906px) {
+  .avatar {
+    display: none;
+  }
+}
+
+
 </style>

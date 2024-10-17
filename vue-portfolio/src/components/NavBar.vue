@@ -6,6 +6,7 @@
         base-color="background"
         icon="mdi-menu"
         class="pa-4 ma-4"
+        style="z-index: 12;"
       />  
       <v-navigation-drawer
         v-model="drawer"
@@ -17,7 +18,7 @@
           >
             <v-img
               alt="Michael"
-              src="../assets/avatar-pic.png"
+              src="https://media.licdn.com/dms/image/v2/D5603AQEMXJclBwBM2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698597923442?e=1734566400&v=beta&t=684ZjpbnkAurCofrtwXChuf_0c7f0gQ11nUn5ajCDJM"
             ></v-img>
           </v-avatar>
           <v-list-item

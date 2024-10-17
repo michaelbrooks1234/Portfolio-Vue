@@ -127,7 +127,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 90vh;
 }
 
 .text-field-email {
@@ -140,7 +140,7 @@ export default {
 
 .secondary-form-container {
   width: 50%;
-  height: fit-content
+  height: fit-content;
 }
 
 @media only screen and (max-width: 700px) {
@@ -154,7 +154,7 @@ export default {
 
   .secondary-form-container {
     width: 80%;
-    height: 40%;
+    height: fit-content;
   }
 }
 </style>
