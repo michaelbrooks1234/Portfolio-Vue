@@ -134,6 +134,10 @@
   .avatar {
     display: none;
   }
+
+  .subTitleText {
+    text-align: center;
+  }
 }
 
 
