@@ -23,6 +23,7 @@
       >
         Experience
         <v-tooltip
+          v-if="!isMobile"
           activator="parent"
           location="top"
         >
@@ -34,6 +35,7 @@
       >
         Projects
         <v-tooltip
+          v-if="!isMobile"
           activator="parent"
           location="top"
         >
@@ -45,6 +47,7 @@
       >
         Contact
         <v-tooltip
+          v-if="!isMobile"
           activator="parent"
           location="top"
         >
@@ -56,14 +59,23 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        title: 'Michael Brooks',
-        subTitle: 'Full Stack Engineer',
+export default {
+  data() {
+    return {
+      title: 'Michael Brooks',
+      subTitle: 'Full Stack Engineer',
+    }
+  },
+  computed: {
+    isMobile() {
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+      } else {
+        return false
       }
     },
   }
+}
 </script>
 <style scoped lang="scss">
 @import '../styles/settings.scss';
