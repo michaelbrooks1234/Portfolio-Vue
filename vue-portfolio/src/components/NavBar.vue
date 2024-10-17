@@ -7,7 +7,7 @@
         icon="mdi-menu"
         class="pa-4 ma-4"
         style="z-index: 12;"
-      />  
+      />
       <v-navigation-drawer
         v-model="drawer"
         temporary
@@ -35,20 +35,12 @@
             v-for="(item, i) in items"
             :key="i"
             :prepend-icon="item.icon"
-            @click="$router.push(item.route), drawer = false"
+            @click="updateRoute(item)"
             class="navItem"
           >  
             {{ item.title }}
           </v-list-item>
         </v-list>
-        <div>
-          <v-img
-             
-          ></v-img>
-          <v-img
-
-          ></v-img>
-        </div>
       </v-navigation-drawer>
     </v-container>
 </template>
@@ -78,9 +70,34 @@ export default {
           icon: 'mdi-send',
           route: '/contact'
         },
+        {
+          title: 'LinkedIn',
+          icon: 'mdi-linkedin',
+          route: 'https://www.linkedin.com/in/michael-brooksengineer/?trk=opento_sprofile_details',
+          externalLink: true,
+        },
+        {
+          title: 'Github',
+          icon: 'mdi-github',
+          route: 'https://github.com/michaelbrooks1234',
+          externalLink: true,
+        },
       ]
     }
   },
+  methods: {
+    // Using 'any' is a TypeScript sin I assume.
+    updateRoute(item: any) {
+      if (item.externalLink === true) {
+      window.open(item.route, '_blank');
+      this.drawer = false;
+      return;
+      }
+      this.$router.push(item.route);
+      this.drawer = false;
+      return;
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
